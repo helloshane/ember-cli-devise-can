@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-cli-cancan'
+  name: 'ember-cli-devise-can'
 };
