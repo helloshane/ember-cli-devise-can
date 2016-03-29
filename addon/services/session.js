@@ -18,7 +18,7 @@ export default Ember.Service.extend({
     return new Ember.RSVP.Promise( (resolve, reject) =>{
       Ember.$.ajax(loginUrl, {
         success: (res) => {
-          console.info(`[ember-cli-devise-can:service:session:_serverAuth] ajax success`)          
+          console.info(`[ember-cli-devise-can:service:session:_serverAuth] ajax success`) 
           that.setAuthenticateData(res);
           if( resolve ) resolve(res);
         },
@@ -41,11 +41,11 @@ export default Ember.Service.extend({
     **/
   setAuthenticateData(userData){
     if( isBlank(userData) ) return;
-    let { mail, uid, isRoot, permissions } = userData;
+    let { email, uid, isRoot, permissions } = userData;
     this.setProperties({
       isAuthenticated: true,
       isSystemRoot: isRoot,
-      currentUser: { email: mail, account: uid},
+      currentUser: { email: email, account: uid},
       currentPermission: permissions
     })
   },
